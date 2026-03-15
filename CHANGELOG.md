@@ -11,7 +11,16 @@ All notable changes to EverClaw are documented here.
 - **Rate limiting + body size protection** — New `securityMiddleware` runs before auth: 30 req/min per IP, 1MB body limit, smart cleanup at 800+ entries to prevent memory leaks.
 - File grew from 833 → 924 lines. Zero new dependencies. All 36 existing tests pass.
 
-## [2026.3.16] - 2026-03-12
+### Fixed
+- **morpheus-proxy.mjs** — Model refresh was parsing router response incorrectly
+  - Router returns `{ models: [...] }` but code expected raw array
+  - Fix: `const data = JSON.parse(res.body.toString()); const models = Array.isArray(data) ? data : (data.models || []);`
+  - Result: Model list now refreshes correctly, showing 40 models including GLM-5
+  - Backwards compatible — handles both array and object formats
+
+---
+
+## [2026.3.17] - 2026-03-15
 
 ### Changed
 - **install-with-deps.sh** — Complete zero-prompt rewrite (5-stage build)
