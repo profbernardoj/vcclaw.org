@@ -975,3 +975,4 @@ For each new agent, follow these steps:
 ### History
 
 - **Mar 17, 2026** — SOP-004 created. 8 agents defined. Build order prioritized. Draft-and-approve workflow. All agents on GLM-5 (Morpheus).
+- **Mar 17, 2026** — All 8 agents deployed and bound to Signal groups. Total system agents: 22. content-writer tested and confirmed responsive. SOP-004 fully operational.
