@@ -32,7 +32,7 @@
 | 5 | **Testing** | Unit tests, integration tests, edge cases | All tests pass |
 | 6 | **PII Scan** | Scan for leaked keys, addresses, personal data | 0 PII findings |
 | 7 | **Documentation** | Update SKILL.md, CHANGELOG, README, architecture docs | Docs reviewed |
-| 8 | **Primary Deploy** | Push to `EverClaw/EverClaw` (org) + `profbernardoj/everclaw` | Clean push |
+| 8 | **Primary Deploy** | Push to `EverClaw/EverClaw` (org) + `EverClaw/EverClaw` | Clean push |
 | 9 | **Ecosystem Deploy** | Sync to all 28+ flavor repos via `ecosystem-sync.sh` | All repos synced |
 | 10 | **Package Tag & Docker** | Version bump, git tag, Docker image build via GitHub Actions | Image verified |
 
@@ -147,7 +147,7 @@
 
 ### Stage 8 — Primary Deploy
 
-- Push to `profbernardoj/everclaw` (origin)
+- Push to `EverClaw/EverClaw` (origin)
 - Push to `EverClaw/EverClaw` (org remote)
 - Verify both repos match
 
