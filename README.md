@@ -1,10 +1,12 @@
-> **📢 Canonical repo: [profbernardoj/morpheus-skill](https://github.com/profbernardoj/morpheus-skill)** — EverClaw has been rebranded to **Morpheus Skill**. All development, issues, and PRs should target the canonical repo. This mirror is kept in sync automatically.
+> **📢 DEPRECATED** — This is an automatically-updated mirror.  
+> **Canonical repository:** [profbernardoj/morpheus-skill](https://github.com/profbernardoj/morpheus-skill).  
+> All development, issues, and PRs must go to the canonical repo.
 
-# ♾️ Morpheus Skill — AI Inference You Own, Forever Powering Your Agents
+# ♾️ Morpheus Skill — AI Inference You Own, Forever Powering Your OpenClaw Agents
 
 *Formerly EverClaw. Powered by the [Morpheus](https://mor.org) decentralized inference network.*
 
-**Open-source first.** Everclaw connects your [OpenClaw](https://github.com/openclaw/openclaw) agent to the [[REDACTED]](https://mor.org) decentralized inference network — putting open-source models like GLM-5 (Opus 4.5-level) front and center as your default, with Claude as a fallback only when needed.
+**Open-source first.** Morpheus Skill connects your [OpenClaw](https://github.com/openclaw/openclaw) agent to the [Morpheus](https://mor.org) decentralized inference network — putting open-source models like GLM-5 (Opus 4.5-level) front and center as your default, with Claude as a fallback only when needed.
 
 Your agent runs on inference you own: GLM-5, GLM-4.7 Flash, Kimi K2.5, and 30+ models powered by staked MOR tokens that recycle back to you. No API bills, no credit limits, no surprise costs. MOR is staked — not spent — so you maintain access for as long as you hold your tokens.
 

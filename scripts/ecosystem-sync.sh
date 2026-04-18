@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ecosystem-sync.sh — Automated Morpheus Skill ecosystem sync
 #
-# Syncs the main branch to all downstream repos (EverClaw + 30 flavor repos).
+# Syncs the main branch to all 33 remotes (origin + everclaw + everclaw-org + 30 flavor repos).
 # Verifies all remotes match origin HEAD after push.
 # Sends a Signal summary via OpenClaw message tool (optional).
 #
@@ -19,7 +19,7 @@
 set -euo pipefail
 
 # === Concurrent Execution Lock (prevents overlapping pushes) ===
-LOCK_DIR="/tmp/morpheus-skill-sync.lock"
+LOCK_DIR="/tmp/morpheus-skill-ecosystem-sync.lock"
 if mkdir "$LOCK_DIR" 2>/dev/null; then
   trap 'rm -rf "$LOCK_DIR"' EXIT
 else
@@ -148,7 +148,7 @@ sync_remote() {
 }
 
 # 1. Push to origin first
-echo "📦 Origin (Morpheus Skill)"
+echo "📦 Origin (morpheus-skill canonical)"
 sync_remote "$ORIGIN_REMOTE" "origin" || true
 echo ""
 
