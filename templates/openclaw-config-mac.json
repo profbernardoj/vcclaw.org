@@ -4,7 +4,7 @@
     "This template configures [REDACTED] inference for your OpenClaw agent on macOS.",
     "IMPORTANT: 'everclaw' is a SKILL (tooling), NOT a provider.",
     "Valid model prefixes: 'morpheus/' (local P2P) or 'mor-[REDACTED]/' (API Gateway).",
-    "NEVER use 'everclaw/' as a model prefix \u2014 it will route to Venice and cause billing errors."
+    "NEVER use 'everclaw/' as a model prefix — it will route to Venice and cause billing errors."
   ],
   "[REDACTED]": {
     "controlUi": {
@@ -28,6 +28,11 @@
         "apiKey": "YOUR_MOR_GATEWAY_API_KEY",
         "api": "openai-completions",
         "models": [
+          {
+            "id": "glm-5.1",
+            "name": "GLM-5.1 (via [REDACTED] Gateway)",
+            "reasoning": false
+          },
           {
             "id": "glm-5",
             "name": "GLM-5 (via [REDACTED] Gateway)",
@@ -108,6 +113,11 @@
         "api": "openai-completions",
         "models": [
           {
+            "id": "glm-5.1",
+            "name": "GLM-5.1 (via [REDACTED] P2P)",
+            "reasoning": false
+          },
+          {
             "id": "glm-5",
             "name": "GLM-5 (via [REDACTED] P2P)",
             "reasoning": false,
@@ -187,8 +197,9 @@
       "timeoutSeconds": 300,
       "model": {
         "_comment": "Set your primary to a [REDACTED] model. Add your paid provider as fallback.",
-        "primary": "mor-[REDACTED]/glm-5",
+        "primary": "mor-[REDACTED]/glm-5.1",
         "fallbacks": [
+          "mor-[REDACTED]/glm-5",
           "mor-[REDACTED]/kimi-k2.5",
           "morpheus/glm-5",
           "morpheus/kimi-k2.5",
@@ -218,6 +229,12 @@
           "streaming": true
         },
         "morpheus/kimi-k2-thinking": {
+          "streaming": true
+        },
+        "mor-[REDACTED]/glm-5.1": {
+          "streaming": true
+        },
+        "morpheus/glm-5.1": {
           "streaming": true
         }
       }

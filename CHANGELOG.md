@@ -2,6 +2,24 @@
 
 All notable changes to EverClaw are documented here.
 
+## [2026.5.20.1645] - 2026-05-20
+
+### Changed — Default Model Upgrade to GLM-5.1
+
+- **Primary model** changed from GLM-5 to GLM-5.1 across all deployment modalities
+- **Fallback chain** updated: GLM-5.1 → GLM-5 → Kimi K2.5 → GLM 4.7 Flash
+- **Model config:** GLM-5.1 added to both `mor-gateway` and `morpheus-local` provider model lists
+- **Streaming config:** GLM-5.1 streaming entries added to all templates
+- **Documentation:** Updated comments and descriptions to reference GLM-5.1 as default
+
+### Files Modified
+
+- `packages/core/config/openclaw-default.json` — Docker default config
+- `packages/core/scripts/docker-entrypoint.sh` — EVERCLAW_DEFAULT_MODEL env var
+- `packages/core/templates/openclaw-config-gateway-only.json` — Gateway-only template
+- `packages/core/templates/openclaw-config-linux.json` — Linux install template
+- `packages/core/templates/openclaw-config-mac.json` — macOS install template
+
 ## [2026.5.18] - 2026-05-18
 
 ### Fixed — Monorepo URL Migration
