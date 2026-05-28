@@ -2,6 +2,46 @@
 
 All notable changes to EverClaw are documented here.
 
+## [2026.5.28.1854] - 2026-05-28
+
+### OpenClaw Pin Bump v2026.5.22 → v2026.5.27
+
+- **packages/core/Dockerfile:** OpenClaw build target updated to `v2026.5.27`; `EVERCLAW_VERSION` default re-aligned with release version (was desynchronized at `2026.5.20.1645` since v2026.5.24.0400 release)
+- **packages/core/docker-compose.yml:** Image tag, `OPENCLAW_VERSION` build arg, and `EVERCLAW_VERSION` updated
+- **package.json:** Version bump to `2026.5.28.1854`
+- **SKILL.md (root):** Version stamp and embedded diagnostics JSON updated
+- **packages/core/SKILL.md:** Version stamp and embedded diagnostics JSON updated
+- **CHANGELOG.md:** Added this entry with upstream highlights and security/new-feature/fix sections
+
+> This is a pure pin-bump release — no EverClaw code logic changes.
+
+### Upstream Highlights (OpenClaw v2026.5.22 → v2026.5.27)
+
+#### Security
+- **Content boundaries:** Group prompt text routed outside system prompts, repeated-dot hostnames normalized, side-effecting command wrappers blocked, unsafe Node runtime env overrides rejected
+- **Access control:** No-auth Tailscale exposure rejected, node/device-role approvals require admin authority, QQBot fallback approval buttons honor slash-command auth
+- **Channels:** Untrusted Microsoft Teams service URLs blocked, /allowlist configWrites origin policy enforced, Discord guild requester checks tightened
+
+#### New Features
+- **Embedding providers:** Core OpenAI-compatible embedding provider for local and hosted endpoints with config, doctor, and docs support
+- **Pixverse:** Video generation provider with API region selection and external plugin packaging
+- **DeepInfra:** Full credential-aware model catalog browsing during onboarding
+- **ClawHub:** Plugin display metadata for cleaner catalog/package listing names
+- **Plugin SDK:** Plugin approval action metadata exposed; memory-specific embedding registration deprecated (compat preserved)
+- **Agents:** Heartbeat runtime template split out of docs assets with legacy repair
+
+#### Fixes
+- **Codex:** Runtime model resolution before generic routing, workspace memory routed through tools, shared app-server client resilience, native hook relay generation survival across restarts
+- **Providers/models:** VLLM thinking params wired, Claude CLI OAuth overlays for PI auth profiles, bare direct Anthropic model ids, OpenAI gpt-5.5 resolution without cached catalog
+- **Channels:** Telegram durable sendMessage delivery, iMessage duplicate suppression, Slack final reply preservation during late cleanup, Matrix mention-inert previews, Discord tool-warning artifact recovery, Google Chat thread DM fix
+- **Gateway/performance:** Read-only session metadata borrowing, plugin metadata fingerprint caching, auto-enabled plugin config caching, browser token expiry after auth rotation
+- **Memory:** QMD search JSON salvaged after nonzero exits
+- **Install/CI:** npm globstar exclusion matching, shrinkwrap override pin merging, Docker runtime workspace template packaging and smoke testing
+
+(Reference: https://github.com/openclaw/openclaw/releases/tag/v2026.5.27)
+
+---
+
 ## [2026.5.24.0400] - 2026-05-24
 
 ### OpenClaw Pin Bump v2026.5.12 → v2026.5.22

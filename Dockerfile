@@ -20,7 +20,7 @@
 #   docker build -t ghcr.io/everclaw/everclaw:latest .
 #
 # Build with specific OpenClaw version:
-#   docker build --build-arg OPENCLAW_VERSION=v2026.5.22 -t ghcr.io/everclaw/everclaw:latest .
+#   docker build --build-arg OPENCLAW_VERSION=v2026.5.27 -t ghcr.io/everclaw/everclaw:latest .
 #
 # Run:
 #   docker run -d \
@@ -50,7 +50,7 @@
 
 # ─── Stage 1: Build OpenClaw ─────────────────────────────────────────────────
 
-ARG OPENCLAW_VERSION=v2026.5.22
+ARG OPENCLAW_VERSION=v2026.5.27
 
 FROM node:22-bookworm AS openclaw-builder
 
@@ -188,7 +188,9 @@ RUN FDIR="/home/node/.openclaw/workspace/skills/everclaw/flavors/${FLAVOR}"; \
 
 # ─── Environment ──────────────────────────────────────────────────────────────
 
-ARG EVERCLAW_VERSION=2026.5.20.1645
+# Note: Prior release left this at 2026.5.20.1645 (desynchronized from package.json 2026.5.24.0400).
+# Re-aligned with release version as of v2026.5.28.1854.
+ARG EVERCLAW_VERSION=2026.5.28.1854
 ENV EVERCLAW_VERSION=${EVERCLAW_VERSION}
 ENV NODE_ENV=production
 ENV EVERCLAW_PROXY_PORT=8083
